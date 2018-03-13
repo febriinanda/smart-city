@@ -12,20 +12,17 @@ import {
 export class AuthService {
   private baseUrl:any;
   private appId:any;
-  constructor(private http:HttpClient, private request: HttpRequest<any>, private next: HttpHandler) { 
-    this.baseUrl = "/api/";
+  public token: string;
+  constructor(private http:HttpClient) { 
     this.appId = "62f2b5ed4";
   }
 
   tokenRequest(): Observable<any>{
-    this.request = this.request.clone({
-      setHeaders: {
-        Authorization: `Bearer ${this.appId}`
-      }
-    });
-
-    this.next.handle(this.request);
-    return this.http.post(this.baseUrl + "vendor/tokenrequest", null);
+    console.log("Token Req");
+    return this.http.post("api/vendor/tokenrequest", null, {
+      headers: {
+        'Authorization':`Bearer ${this.appId}`
+      }});
   }
 
 }

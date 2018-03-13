@@ -6,20 +6,25 @@ import {
   HttpInterceptor
 } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
+import { AuthService } from './auth.service';
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
-    appId: string;
+  token: string;
 
-  constructor() {
-      this.appId = "$2y$10$9CzZYR88fFz4gSaB3LaEUu3W33JRgsbF\/pdZBwy8dkEO5K\/zQHgRK";
+  constructor(private auth:AuthService) {
+    this.auth.tokenRequest().subscribe(
+      result => {
+        this.token = result.token;
+      }
+    );
   }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     
     request = request.clone({
       setHeaders: {
-        Authorization: `Bearer ${this.appId}`
+        Authorization: `Bearer ${this.token}`
       }
     });
 

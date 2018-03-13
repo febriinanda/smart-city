@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-product',
@@ -7,18 +8,26 @@ import { ProductService } from '../product.service';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-
-  constructor(public _product: ProductService) { }
+  products:any;
+  imgUrl: string;
+  constructor(public _product: ProductService, public auth: AuthService) { }
 
   ngOnInit() {
-    this.listProducts();
+    this.products = {};
+    this.imgUrl = "http://wiztalk.co/"
+    this.auth.tokenRequest().subscribe(
+      result=>{
+        this.auth.token = result.token;
+        this.listProducts();
+      }
+    );
   }
 
   listProducts(){
     this._product.getListProducts().subscribe(
       result => {
-        console.log(result);
-        
+        this.products = result.data;
+        console.log(this.products);
       }
     );
   }

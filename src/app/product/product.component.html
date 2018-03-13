@@ -1,0 +1,13 @@
+<div class="pages">
+  <div class="content grid" *ngIf="products.length">
+    <div class="card" *ngFor="let product of products">
+      <div class="title">
+          {{ product.name }}
+      </div>
+      <div class="avatar">
+        <img [src]="imgUrl + product.avatar">
+        {{ product.avatar }}
+      </div>
+    </div>
+  </div>
+</div>
