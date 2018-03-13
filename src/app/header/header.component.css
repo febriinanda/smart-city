@@ -4,7 +4,7 @@
     height: 80vh;
     display: block;
     position: absolute;
-    top: 13vh;
+    top: 11vh;
     left: 0;
     background-image: url(../../assets/img/header.jpg);
     background-size: cover;
@@ -15,7 +15,7 @@
     position: relative;
     text-align: center;
     color: white;
-    padding-top: 10%;
+    padding-top: 13%;
     filter: brightness(1) !important;
 }
 

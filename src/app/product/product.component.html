@@ -21,7 +21,7 @@
       
     </div>
     <div class="grid">
-      <div class="packages" *ngFor="let pack of selProduct.packages.data" [ngClass]="{'promo': pack.is_promo == 'Y'}">
+      <div class="packages" *ngFor="let pack of selProduct.packages.data | orderBy: 'session'" [ngClass]="{'promo': pack.is_promo == 'Y'}">
         <div class="title">
           {{ pack.name }}
         </div>

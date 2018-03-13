@@ -12,6 +12,8 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from "./token.interceptor";
 import { AuthService } from './auth.service';
 import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { OrderModule } from 'ngx-order-pipe';
 
 
 @NgModule({
@@ -19,12 +21,14 @@ import { HeaderComponent } from './header/header.component';
     AppComponent,
     ProductComponent,
     HeaderComponent,
+    FooterComponent,
     
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    HttpModule
+    HttpModule,
+    OrderModule 
   ],
   providers: [
     ProductService,
