@@ -20,25 +20,28 @@
     <div class="desc" [innerHTML]="selProduct.description">
       
     </div>
-    <div>
-        {{ selProduct.packages.data }}
-        <div class="card" *ngFor="let pack of selProduct.packages.data">
-          <div class="title">
-            {{ pack.name }}
-          </div>
-          <div class="price">
-            {{ pack.price }}
-          </div>
-          <div class="session">
-            {{ pack.session }}
-          </div>
-          <div class="disc">
-            {{ pack.discount}}
-          </div>
-          <div class="promo">
-            {{ pack.is_promo}}
-          </div>
+    <div class="grid">
+      <div class="packages" *ngFor="let pack of selProduct.packages.data" [ngClass]="{'promo': pack.is_promo == 'Y'}">
+        <div class="title">
+          {{ pack.name }}
         </div>
+        <div class="price">
+          {{ pack.price | currency:'IDR'}}
+        </div>
+        <div class="session">
+          {{ pack.session }}
+        </div>
+        <div class="discount" *ngIf="pack.discount!=0.00">
+          {{ pack.discount | currency:'IDR'}}
+        </div>
+        <button class="btn">
+          Get now!
+        </button>
+        <div class="special" *ngIf="pack.is_promo == 'Y'">
+          Special Offer!
+        </div>
+        
+      </div>
     </div>
   </div>
 </div>

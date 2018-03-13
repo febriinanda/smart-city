@@ -82,7 +82,7 @@
 /* Modal Content/Box */
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 5% auto; /* 15% from the top and centered */
     padding: 10px 15%;
     border: 1px solid #888;
     width: 100%; /* Could be more or less, depending on screen size */
@@ -104,4 +104,92 @@
     cursor: pointer;
 }
 
+.modal-content .packages{
+    color: white;
+    text-align: center;
+    background: rgb(27, 85, 110);
+    /* padding: .5em; */
+    margin: 5px;
+    margin-top:10px;
+    border-radius: 5px;
+}
+
+.packages > .title{
+    font-weight: bold;
+    font-size: .8em;
+    padding: 1.5em;
+}
+
+.packages > .price{
+    font-weight: 100;
+    font-size: 1em;
+    padding: .5em;
+    margin: .5em 0 1.5em;
+    
+    
+    /* border-radius: 100%; */
+}
+
+.packages > .session{
+    font-weight: bold;
+    font-size: 1em;
+    padding: .5em;
+    margin: .5em 0m;
+    
+    
+    /* border-radius: 100%; */
+}
+
+.packages > .session::after{
+    content: " Session(s)";
+    font-weight: 300;
+}
+
+.packages > .discount{
+    font-weight: bold;
+    font-size: 1em;
+    padding: .5em;
+    margin: .5em 0m;
+    
+    
+    /* border-radius: 100%; */
+}
+
+.packages > .discount::before{
+    content: "Discount ";
+    font-weight: 300;
+}
+
+.packages.promo{
+    background: rgb(58, 156, 91) !important;
+    color: white !important;
+    border-style: solid;
+    border-color: rgb(29, 109, 55) !important;
+}
+
+.packages.promo > .btn{
+    padding: .5em 1em;
+    background: rgb(21, 77, 39) !important;
+    color: white;
+    margin: 1.5em 0;
+    border: none;
+}
+.packages > .special{
+    padding: .5em;
+    background: rgb(29, 109, 55) !important;
+    color: white;
+    margin-bottom: 2em;
+}
+
+.packages > .btn{
+    padding: .5em 1em;
+    background: rgb(17, 63, 83) !important;
+    color: white;
+    margin: 1.5em 0;
+    border: none;
+}
+
+.packages:hover{
+    transform: scale(2px)
+}
 
