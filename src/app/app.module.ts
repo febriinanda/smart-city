@@ -7,6 +7,9 @@ import { AppComponent } from './app.component';
 import { ProductComponent } from './product/product.component';
 import { ProductService } from './product.service';
 
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptor } from "./token.interceptor";
+
 
 @NgModule({
   declarations: [
@@ -18,7 +21,14 @@ import { ProductService } from './product.service';
     BrowserModule,
     HttpClientModule
   ],
-  providers: [ProductService],
+  providers: [
+    ProductService,
+    {
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptor,
+    multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

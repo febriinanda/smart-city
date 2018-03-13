@@ -7,12 +7,11 @@ export class ProductService {
   private baseUrl:any;
 
   constructor(private http: HttpClient) {
-    this.baseUrl = "http://wiztalk.co/api/vendor";
-   }
-
+    
+  }
 
   getListProducts(): Observable<any>{
-    return this.http.get(this.baseUrl+"/listproducts");
+    return this.http.get("/api/vendor/listproduct");
   }
 
 }
