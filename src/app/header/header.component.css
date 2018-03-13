@@ -1,0 +1,71 @@
+
+.jumbotron{
+    width: 100vw;
+    height: 80vh;
+    display: block;
+    position: absolute;
+    top: 13vh;
+    left: 0;
+    background-image: url(../../assets/img/header.jpg);
+    background-size: cover;
+    filter: grayscale(0)
+}
+
+.content{
+    position: relative;
+    text-align: center;
+    color: white;
+    padding-top: 10%;
+    filter: brightness(1) !important;
+}
+
+.content > .jargon{
+    font-size: 2.5em;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.content > .subjargon{
+    font-size: .8em;
+    font-weight: 300;
+}
+
+.content > .btn{
+    padding: 1em;
+    background: rgba(16,45,57, 0.9);
+    margin-top: 2.5em;
+    text-decoration: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.header{
+    padding: .5em;
+    display: grid;
+    grid-template-columns: 4% 50% auto;
+    color: rgb(119, 118, 118);
+}
+.header > .logo{
+    width: 50px;
+}
+
+.header .title{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.header .sub{
+    font-size: .7em;
+    font-weight: bold;
+}
+
+.right{
+    text-align: right;
+    font-size: .8em;
+}
+
+.link{
+    cursor: pointer;
+    color: rgb(17, 139, 238);
+    
+}
+

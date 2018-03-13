@@ -10,10 +10,19 @@ import { AuthService } from '../auth.service';
 export class ProductComponent implements OnInit {
   products:any;
   imgUrl: string;
-  constructor(public _product: ProductService, public auth: AuthService) { }
+  selProduct: any;
+
+  constructor(public _product: ProductService, public auth: AuthService) {
+    
+   }
 
   ngOnInit() {
     this.products = {};
+    this.selProduct = {
+      packages: {
+        data:[]
+      }
+    }
     this.imgUrl = "http://wiztalk.co/"
     this.auth.tokenRequest().subscribe(
       result=>{
@@ -30,6 +39,21 @@ export class ProductComponent implements OnInit {
         console.log(this.products);
       }
     );
+  }
+
+  showDetail(item: any){
+    console.log("show detail");
+    this.selProduct = item;
+    console.log(this.selProduct);
+  }
+
+  closeModal(){
+    this.selProduct = {
+      packages: {
+        data:[]
+      }
+    }
+    console.log(this.selProduct);
   }
 
 }

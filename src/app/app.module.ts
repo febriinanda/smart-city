@@ -11,12 +11,14 @@ import { ProductService } from './product.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from "./token.interceptor";
 import { AuthService } from './auth.service';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductComponent,
+    HeaderComponent,
     
   ],
   imports: [
